@@ -42,7 +42,10 @@ def download_youtube(message):
 #bot video download 
 def video(message , url):
     try:
-        ydl_opts = {}
+        ydl_opts = {
+            'outtmpl' : '%(title)s.%(ext)s',
+            'cookies' : 'cookies.txt',
+        }
 
         with yt_dlp.YoutubeDL(ydl_opts) as dlp:
             info = dlp.extract_info(url, download=True)
@@ -56,7 +59,10 @@ def video(message , url):
 #bot link download
 def link(message , url):
     try:
-        ydl_opts = {}
+        ydl_opts = {
+            'outtmpl' : '%(title)s.%(ext)s',
+            'cookies' : 'cookies.txt',
+        }
         with yt_dlp.YoutubeDL(ydl_opts) as dlp:
             info = dlp.extract_info(url, download=False)
             formats = info.get("formats")
