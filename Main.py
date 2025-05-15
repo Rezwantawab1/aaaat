@@ -4,7 +4,7 @@ from telebot.types import ReplyKeyboardMarkup , InlineKeyboardButton , InlineKey
 import os
 
 
-api_key = os.environ("BOT_TOKEN")
+api_key = os.environ["BOT_TOKEN"]
 bot = telebot.TeleBot(api_key)
 
 rep = ReplyKeyboardMarkup(resize_keyboard=True , one_time_keyboard=True)
